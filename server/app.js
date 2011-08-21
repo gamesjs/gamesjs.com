@@ -23,7 +23,8 @@ app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   console.log('Running in Development Mode');
 });
-  // Production specific
+  // Production specific (You don't have to worry about setting this. 
+  // It is set by default on the live server.
 app.configure('production', function(){
   port = 80;
   var oneYear = 31557600000;
