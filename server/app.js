@@ -13,9 +13,6 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.bodyParser());
   app.use(app.router);
-  
-  
-  
 });
   // Development specific 
 app.configure('development', function(){
@@ -36,10 +33,6 @@ console.log('Running in Production Mode');
 // Set EJS as our default Template Engine
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-
-
-
-
 
 // Routes
   // Home Page
