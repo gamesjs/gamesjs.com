@@ -1,0 +1,10 @@
+# Guideliness
+
+## Coding Style Doc 
+
+Coming soon.
+
+## Module Dependencies
+When adding a module dependency make sure to specify
+a version to make the project more stable. Upgrade to 
+new versions with thorough testing then upgrade the version below.
