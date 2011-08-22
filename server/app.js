@@ -56,14 +56,30 @@ var pages = ["about", "contribute", "demos", "docs", "home", "meetups"];
 for(var i = 0; i<pages.length;i++){
   (function(){
     var j = i;
-    app.get('/pages/'+pages[j], function(req,res){
-      res.render('pages/'+pages[j],{layout:false});
+    app.get('/pages/full/'+pages[j], function(req,res){
+      res.render('pages/full/'+pages[j],{layout:false});
     });
     app.get('/'+pages[j],function(req,res){
       res.render('index');
     });
   })();
 }
+  // All the subpages
+var meetups = ["javascript-and-html5-games-kickoff-meeting"];
+for(var i = 0; i<meetups.length;i++){
+  (function(){
+    var j = i;
+    app.get('/meetups/'+meetups[j], function(req,res){
+      res.render('index');
+    });
+    app.get('/pages/meetups/'+meetups[j],function(req,res){
+      res.render('pages/meetups/'+meetups[j],{layout:false});
+    });
+  })();
+}
+
+
+
   // 404 Page
 
 app.get('/pages/page-not-found-404', function(req,res){

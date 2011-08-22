@@ -7,7 +7,8 @@ $(function(){
     "about": new AboutRouter(),
     "meetups": new MeetupsRouter(),
     "contribute": new ContributeRouter(),
-    "pageNotFound": new PageNotFoundRouter()
+    "pageNotFound": new PageNotFoundRouter(),
+    "kickoffMeetup": new KickoffMeetupRouter()
   }
   
   if( !Backbone.history.start({pushState:true}) ){
