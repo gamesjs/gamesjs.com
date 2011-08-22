@@ -52,7 +52,7 @@ app.get('/', function(req,res){
   res.render('index');
 });
   // All the subpages
-var pages = ["contribute", "demos", "docs", "home"];
+var pages = ["about", "contribute", "demos", "docs", "home", "meetups"];
 for(var i = 0; i<pages.length;i++){
   (function(){
     var j = i;

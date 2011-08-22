@@ -7,6 +7,20 @@
   width: 300px;
   text-align: center;
 }
+#follow-us {
+  margin-top: 4px;
+  padding-top: 2px;
+  padding-left: 20px;
+}
+#follow-us:hover {
+  background: #0064cd;
+}
+#follow-us img {
+  position: relative;
+  top: 2px;
+  margin-left: 7px;
+  padding-right: 0px;
+}
 div.mini-layout {
   margin-bottom: 20px;
   border: 1px solid #ccc;

@@ -117,7 +117,7 @@ goo.HTMLPage = goo.Page.inherit({
     this.htmlLoaded = false;
   },
   onDeactivate: function(){
-    this.html.detach();
+    this.html.hide();
   },
   beforeActivate: function(){
     var self = this;
@@ -133,9 +133,11 @@ goo.HTMLPage = goo.Page.inherit({
     return true;
   },
   onHTML: function(html){
+    this.html.appendTo('#page-content');
+    this.html.hide();
   },
   onActivate: function(){
-    this.html.appendTo('#page-content');
+    this.html.show();
   },
   
   // Event Wrappers
