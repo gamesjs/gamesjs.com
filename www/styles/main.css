@@ -45,3 +45,8 @@ div.mini-layout div {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.lilli-thompsons-slides {
+  -moz-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
