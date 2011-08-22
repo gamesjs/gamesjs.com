@@ -1,5 +1,6 @@
 // Dependencies
-var express = require('express');
+var express = require('express'),
+    stylus = require('stylus');
 
 // Create App/Server
 var app = module.exports = express.createServer();
@@ -12,7 +13,18 @@ var port = 8080;
 app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.bodyParser());
+  
+  // Setup Stylus (Will Compile files on change
+  function compile(str, path, fn) {
+    stylus(str)
+      .set('filename', path)
+      .set('compress', true)
+      .render(fn);
+  }
+  app.use(stylus.middleware({ src: __dirname + '/../www' }));
+  
   app.use(app.router);
+  
 });
   // Development specific 
 app.configure('development', function(){
@@ -39,6 +51,30 @@ app.set('view engine', 'ejs');
 app.get('/', function(req,res){
   res.render('index');
 });
+  // All the subpages
+var pages = ["contribute", "demos", "docs", "home"];
+for(var i = 0; i<pages.length;i++){
+  (function(){
+    var j = i;
+    app.get('/pages/'+pages[j], function(req,res){
+      res.render('pages/'+pages[j],{layout:false});
+    });
+    app.get('/'+pages[j],function(req,res){
+      res.render('index');
+    });
+  })();
+}
+  // 404 Page
+
+app.get('/pages/page-not-found-404', function(req,res){
+  res.render('pages/page-not-found-404',{layout:false});
+});
+app.get('/404',function(req,res){
+  res.render('index');
+});
+
+
+
 
 // Start the server
 app.listen(port);
