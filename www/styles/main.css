@@ -45,3 +45,7 @@ div.mini-layout div {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+.spacer {
+  height: 64px;
+  width: 100%;
+}
